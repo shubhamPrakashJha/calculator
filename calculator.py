@@ -1,34 +1,34 @@
+print("Simple Python Calculator")
 while True:
-    print("OPTIONS:")
-    print("add")
-    print("sub")
-    print("mul")
-    print("div")
-    print("quit")
-    user_input = input(":")
+    print("\nOPTIONS: \nadd for Addition \nsub for Subtraction \nmul for Multiplication \n"
+          "div for Division \nquit OR q to Exit \n")
+    user_input = input("Give your operation: \n").lower()
 
-    if user_input == "quit":
-        break
-    elif user_input =="add":
-        num1 = float(input("enter 1st number"))
-        num2 = float(input("enter 2st number"))
-        result = str(num1 + num2)
-        print("result is "+result)
-    elif user_input =="sub":
-        num1 = float(input("enter 1st number"))
-        num2 = float(input("enter 2st number"))
-        result = str(num1 - num2)
-        print("result is " + result)
-    elif user_input =="mul":
-        num1 = float(input("enter 1st number"))
-        num2 = float(input("enter 2st number"))
-        result = str(num1 * num2)
-        print("result is " + result)
-    elif user_input =="div":
-        num1 = float(input("enter 1st number"))
-        num2 = float(input("enter 2st number"))
-        result = str(num1 / num2)
-        print("result is " + result)
-    else:
-        print("wrong input")
-
+    try:
+        if ("quit" in user_input) or ("q" in user_input):
+            break
+        elif "add" in user_input:
+            num1 = float(input("enter 1st number"))
+            num2 = float(input("enter 2st number"))
+            result = str(num1 + num2)
+            print(f"Result is {result}\n")
+        elif "sub" in user_input:
+            num1 = float(input("enter 1st number:\t"))
+            num2 = float(input("enter 2st number:\t"))
+            result = str(num1 - num2)
+            print(f"Result is {result}\n")
+        elif "mul" in user_input:
+            num1 = float(input("enter 1st number"))
+            num2 = float(input("enter 2st number"))
+            result = str(num1 * num2)
+            print(f"Result is {result}\n")
+        elif "div" in user_input:
+            num1 = float(input("enter 1st number"))
+            num2 = float(input("enter 2st number"))
+            result = str(num1 / num2)
+            print(f"Result is {result}\n")
+        else:
+            print("Wrong Input! \n")
+    except Exception:
+        print("Wrong Input! \n")
+        continue
